@@ -30,7 +30,7 @@
             <li>Прогулки по крышам.</li>
         </ol>
 
-        <h2>Кому подойдёт экскурсия</h2>
+        <h2>Кому подойдёт экскурсия?</h2>
         <img src="images/18.png"
             alt="Smiling girl in Saint Petersburg"
             width="895"
@@ -42,22 +42,115 @@
             <li>Семьям с детьми старше 12 лет.</li>
         </ul>
 
+        <h2>Какие есть тарифы?</h2>
+        <p>Мы знаем, что каждое путешествие уникально. Поэтому разработали несколько тарифов, 
+            чтобы вы могли выбрать самый комфортный для себя. Независимо от выбранного тарифа, вас ждет незабываемое путешествие.
+        </p>
+
         <table width="auto">
             <tr>
-                <th width="200px">Тариф</th>
-                <th width="300px">Группа</th>
+                <th>Тариф</th>
+                <th>Группа</th>
+                <th>Стоимость</th>
+                <th>Программа</th>
             </tr>
             <tr>
-                <td width="200px">Эконом</td>
-                <td width="300px">От 15 человек</td>
+                <td>Эконом</td>
+                <td>От 15 человек</td>
+                <td>1500 руб.</td>
+                <td>Пешая прогулка,<br>
+                    Прогулка по крышам
+                </td>
             </tr>
             <tr>
-                <td width="200px">Комфорт</td>
-                <td width="300px">От 7 чеовек</td>
+                <td>Комфорт</td>
+                <td>От 7 человек</td>
+                <td>2500 руб.</td>
+                <td>Пешая прогулка<br>
+                    Экскурсия по рекам и каналам<br>
+                    Прогулка по крышам
+                </td>
+            </tr>
+            <tr>
+                <td>Премиум</td>
+                <td>От 4 до 6 человек</td>
+                <td>4200 руб.</td>
+                <td>Пешая прогулка<br>
+                    Экскурсия по рекам и каналам<br>
+                    Прогулка по крышам<br>
+                    Экскурсия в Петергоф
+                </td>
+            </tr>
+            <tr>
+                <td>Люкс</td>
+                <td>1-2 человека</td>
+                <td>6000 руб.</td>
+                <td>Эксклюзивные маршруты под ключ<br>
+                    Пешая прогулка<br>
+                    Экскурсия по рекам и каналам<br>
+                    Прогулка по крышам<br>
+                    Экскурсия в Петергоф
+                </td>
             </tr>
         </table>
+        <p>Мы предлагаем различные варианты оплаты. Менеджер поможет подобрать оптимальный вариант.</p>
 
-        <h3>Отзывы клиентов</h3>
+        <h2>Дополнительные услуги</h2>
+        <form>
+            <ul>
+                <li>
+                    <input type="checkbox" name="services" value="transfer" data-price="100">
+                    <label>Трансфер до места начала экскурсии</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" value="transfer" data-price="100">
+                    <lavel>Трансфер для людей из маломобильных групп населения</lavel>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" value="meal" data-price="100">
+                    <label>Завтрак</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" value="meal" data-price="100">
+                    <label>Обед</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" value="meal" data-price="100">
+                    <label>Ужин</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" value="translate" data-price="100">
+                    <label>Переводчик с русского языка на английский</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" value="for children" data-price="100">
+                    <value>Экскурсовод для детей</value>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" value="translate" data-price="100">
+                    <value>Сурдопереводчик</value>
+                </li>
+            </ul>
+        </form>
+        <p2 id="total-price">Сумма 0 рублей</p2>
+        <script>
+            const checkboxes = document.querySelectorAll('input[name="services"]');
+            const totalPriceElement = document.getElementById('total-price');
+        
+            checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                let totalPrice = 0;
+                checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    totalPrice += parseInt(checkbox.getAttribute('data-price'));
+                }
+                });
+                totalPriceElement.textContent = `Сумма: ${totalPrice} рублей`;
+            });
+            });
+        </script>
+
+        <h2>Отзывы участников</h2>
         <figure>
         <img src="images/5.png"
             alt="People who visited Saint Petersburg and they are happy about it"
@@ -86,6 +179,28 @@
         <blockquote>Я просто влюбилась в Санкт-Петербург благодаря этой экскурсии! Суперский гид рассказал удивительные истории о городе и его жителях. Отдельно отмечу маршрут. 
             Не первый раз в Питере, но эти локации увидела впервые. Класс!
         </blockquote>
+
+        <h5>Как записаться на экскурсию</h5>
+        <p>Для подробной информации заполните форму.<br>
+           Наши менеджеры с вами свяжутся.
+        </p>
+
+        <form>
+            <input type="text" placeholder="Имя"><br>
+            <input type="text" placeholder="Фамилия"><br>
+            <input type="text" placeholder="Email"><br>
+            <input type="text" placeholder="Номер телефона"><br>
+            <button type="submit">Отправить</button>
+        </form>
+
+        <select name="tariff" id="tariff">
+            <label for="tariff">Выберите тариф</label>
+            <option value="economy">Эконом</option>
+            <option value="comfort">Комфорт</option>
+            <option value="premium">Премиум</option>
+            <option value="luxe">Люкс</option>
+        </select><br>
+
         <a href="https://t.me/Alexys_davinci">Свяжитесь с автором экскурсии</a>
     </body>
 </html>
